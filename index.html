@@ -398,10 +398,39 @@
             text-decoration: underline;
         }
 
-        /* Responsive */
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 102;
+            margin-top: 40px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #60a5fa;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* Responsive - Tablet */
         @media (max-width: 992px) {
             nav {
                 padding: 15px 30px;
+            }
+            .nav-logo {
+                top: -70px;
+                left: -50px;
+            }
+            .nav-logo img {
+                height: 280px;
             }
             .hero {
                 padding: 100px 30px 60px;
@@ -412,9 +441,13 @@
             .stats, .features, .how-it-works, .cta-section {
                 padding: 60px 30px;
             }
-            .stats-grid, .features-grid, .steps-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .features-grid, .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             footer {
                 padding: 40px 30px;
@@ -424,16 +457,122 @@
                 gap: 20px;
                 text-align: center;
             }
+            .cta-box {
+                padding: 40px 30px;
+            }
         }
 
+        /* Responsive - Mobile */
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .nav-logo {
+                position: fixed;
+                top: -40px;
+                left: -30px;
+            }
+            .nav-logo img {
+                height: 180px;
+            }
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(10, 22, 40, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                margin-top: 0;
+                transition: right 0.3s ease;
+                border-left: 1px solid rgba(96, 165, 250, 0.2);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.2em;
+            }
+            .hero {
+                padding: 100px 20px 50px;
             }
             .hero h1 {
-                font-size: 2em;
+                font-size: 1.8em;
+            }
+            .hero-subtitle {
+                font-size: 1em;
+            }
+            .hero-cta {
+                padding: 14px 28px;
+                font-size: 1em;
+            }
+            .stats, .features, .how-it-works, .cta-section {
+                padding: 50px 20px;
+            }
+            .stats-grid, .features-grid, .steps-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                gap: 15px;
+            }
+            .stat-card {
+                padding: 20px;
+            }
+            .stat-number {
+                font-size: 2.2em;
+            }
+            .section-header {
+                margin-bottom: 40px;
             }
             .section-header h2 {
+                font-size: 1.6em;
+            }
+            .section-header p {
+                font-size: 1em;
+            }
+            .feature-card {
+                padding: 25px;
+            }
+            .step-card {
+                padding: 30px 20px;
+            }
+            .cta-box {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+            .cta-box h2 {
+                font-size: 1.6em;
+            }
+            .cta-box p {
+                font-size: 1em;
+            }
+            footer {
+                padding: 30px 20px;
+            }
+            .footer-logo img {
+                height: 28px;
+            }
+            .footer-logo span {
+                font-size: 1em;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 400px) {
+            .nav-logo {
+                top: -30px;
+                left: -25px;
+            }
+            .nav-logo img {
+                height: 140px;
+            }
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            .stat-number {
                 font-size: 1.8em;
             }
         }
@@ -444,12 +583,29 @@
         <div class="nav-logo">
             <img src="logo.png" alt="Vieglin">
         </div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="#features">Funcionalidades</a>
             <a href="#how-it-works">Como Funciona</a>
             <a href="mailto:admin@vieglin.com" class="nav-cta">Contato</a>
         </div>
+        <div class="mobile-menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
 
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
