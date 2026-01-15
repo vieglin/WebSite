@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vieglin Maestro - Sequenciamento Inteligente de Ordens de Serviço</title>
+    <title>Vieglin Maestro® - Sequenciamento Inteligente de Ordens de Serviço</title>
     <style>
         * {
             margin: 0;
@@ -20,33 +20,27 @@
         /* Navigation */
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            padding: 20px 80px;
+            padding: 15px 80px;
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 22, 40, 0.95);
-            backdrop-filter: blur(10px);
+            background: transparent;
             z-index: 100;
+            height: 70px;
         }
 
         .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            position: fixed;
+            top: -70px;
+            left: -20px;
+            z-index: 101;
         }
 
         .nav-logo img {
-            height: 40px;
+            height: 350px;
             width: auto;
-            border-radius: 8px;
-        }
-
-        .nav-logo span {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #60a5fa;
         }
 
         .nav-links {
@@ -85,12 +79,35 @@
             align-items: center;
             justify-content: center;
             padding: 120px 80px 80px;
-            background: radial-gradient(ellipse at top, #1a2d4a 0%, #0a1628 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at top, rgba(26, 45, 74, 0.85) 0%, rgba(10, 22, 40, 0.9) 70%);
+            z-index: 2;
         }
 
         .hero-content {
             max-width: 800px;
             text-align: center;
+            position: relative;
+            z-index: 3;
         }
 
         .hero h1 {
@@ -400,8 +417,7 @@
 <body>
     <nav>
         <div class="nav-logo">
-            <img src="logo.jpeg" alt="Vieglin">
-            <span>Vieglin</span>
+            <img src="logo.png" alt="Vieglin">
         </div>
         <div class="nav-links">
             <a href="#features">Funcionalidades</a>
@@ -411,10 +427,14 @@
     </nav>
 
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="landing.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Otimize seu centro de distribuição com <span>sequenciamento inteligente</span></h1>
             <p class="hero-subtitle">
-                Maestro orquestra a sequência das suas ordens de serviço, respeitando suas restrições personalizadas para maximizar a eficiência e reduzir custos operacionais.
+                Vieglin Maestro® orquestra a sequência das suas ordens de serviço, respeitando suas restrições personalizadas para maximizar a eficiência e reduzir custos operacionais.
             </p>
             <a href="mailto:admin@vieglin.com" class="hero-cta">Fale com um especialista</a>
         </div>
@@ -440,7 +460,7 @@
     <section class="features" id="features">
         <div class="section-header">
             <h2>A nova era do sequenciamento logístico</h2>
-            <p>O sequenciamento manual é demorado e propenso a erros. Com o Maestro, cada ordem de serviço é otimizada automaticamente, seguindo suas regras.</p>
+            <p>O sequenciamento manual é demorado e propenso a erros. Com o Vieglin Maestro®, cada ordem de serviço é otimizada automaticamente, seguindo suas regras.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
@@ -450,7 +470,7 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🤖</div>
-                <h3>Agente IA Maestro</h3>
+                <h3>Agente IA Vieglin Maestro®</h3>
                 <p>Nosso agente inteligente orquestra a sequência ideal das suas ordens de serviço automaticamente.</p>
             </div>
             <div class="feature-card">
@@ -479,7 +499,7 @@
     <section class="how-it-works" id="how-it-works">
         <div class="section-header">
             <h2>Como funciona</h2>
-            <p>Comece com o Vieglin Maestro e veja resultados na primeira semana.</p>
+            <p>Comece com o Vieglin Maestro® e veja resultados na primeira semana.</p>
         </div>
         <div class="steps-grid">
             <div class="step-card">
@@ -494,7 +514,7 @@
             </div>
             <div class="step-card">
                 <div class="step-number">03</div>
-                <h3>Deixe o Maestro otimizar</h3>
+                <h3>Deixe o Vieglin Maestro® otimizar</h3>
                 <p>Nossa IA gera a sequência ideal respeitando todas as suas restrições.</p>
             </div>
         </div>
@@ -503,7 +523,7 @@
     <section class="cta-section">
         <div class="cta-box">
             <h2>Pronto para otimizar suas operações?</h2>
-            <p>Agende uma demonstração e descubra como o Vieglin Maestro pode transformar seu centro de distribuição.</p>
+            <p>Agende uma demonstração e descubra como o Vieglin Maestro® pode transformar seu centro de distribuição.</p>
             <a href="mailto:admin@vieglin.com" class="hero-cta">Fale com um especialista</a>
         </div>
     </section>
@@ -511,7 +531,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="logo.jpeg" alt="Vieglin">
+                <img src="logo.png" alt="Vieglin">
                 <span>Vieglin</span>
             </div>
             <div class="footer-info">
