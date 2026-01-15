@@ -6,26 +6,26 @@ output_path = "logo.png"
 
 # Read image
 img = cv2.imread(input_path)
-mask = np.zeros(img.shape[:2], np.uint8)
 
-# GrabCut parameters
-bgd_model = np.zeros((1, 65), np.float64)
-fgd_model = np.zeros((1, 65), np.float64)
+# The background is dark navy blue (approx RGB: 20-35, 25-40, 50-70)
+# We'll make pixels transparent if they're close to this dark blue
 
-# Define rectangle around the foreground (adjust margins as needed)
-h, w = img.shape[:2]
-margin = 10
-rect = (margin, margin, w - 2 * margin, h - 2 * margin)
+# Calculate distance from dark navy background color
+# Background appears to be around BGR (50, 35, 25) based on the image
+bg_color = np.array([50, 35, 25])  # BGR
 
-# Apply GrabCut
-cv2.grabCut(img, mask, rect, bgd_model, fgd_model, 5, cv2.GC_INIT_WITH_RECT)
+# Calculate color distance for each pixel
+diff = img.astype(np.float32) - bg_color
+distance = np.sqrt(np.sum(diff ** 2, axis=2))
 
-# Create binary mask
-mask2 = np.where((mask == 2) | (mask == 0), 0, 1).astype("uint8")
+# Pixels far from background color are kept (high alpha)
+# Threshold: if distance > 40, it's not background
+threshold = 40
+alpha = np.clip((distance - threshold) * 5, 0, 255).astype(np.uint8)
 
-# Apply mask and create RGBA image
+# Create RGBA image
 img_rgba = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
-img_rgba[:, :, 3] = mask2 * 255
+img_rgba[:, :, 3] = alpha
 
 cv2.imwrite(output_path, img_rgba)
 print(f"Background removed. Saved to {output_path}")
