@@ -577,6 +577,90 @@
                 font-size: 1.8em;
             }
         }
+
+        /* Contact Form Section */
+        .contact-section {
+            padding: 100px 80px;
+            background: rgba(15, 30, 50, 0.5);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(30, 58, 95, 0.3);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 24px;
+            padding: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #e0e8f0;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(10, 22, 40, 0.8);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 10px;
+            color: #e0e8f0;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #64748b;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(59, 130, 246, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 50px 20px;
+            }
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -587,7 +671,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#features">Funcionalidades</a>
             <a href="#how-it-works">Como Funciona</a>
-            <a href="mailto:admin@vieglin.com" class="nav-cta">Contato</a>
+            <a href="#contact" class="nav-cta">Contato</a>
         </div>
         <div class="mobile-menu-toggle" id="menuToggle" onclick="toggleMenu()">
             <span></span>
@@ -618,7 +702,7 @@
             <p class="hero-subtitle">
                 Vieglin Maestro® orquestra a sequência das suas ordens de serviço, respeitando suas restrições personalizadas para maximizar a eficiência e reduzir custos operacionais.
             </p>
-            <a href="mailto:admin@vieglin.com" class="hero-cta">Fale com um especialista</a>
+            <a href="#contact" class="hero-cta">Fale com um especialista</a>
         </div>
     </section>
 
@@ -710,8 +794,38 @@
         <div class="cta-box">
             <h2>Pronto para otimizar suas operações?</h2>
             <p>Agende uma demonstração e descubra como o Vieglin Maestro® pode transformar seu centro de distribuição.</p>
-            <a href="mailto:admin@vieglin.com" class="hero-cta">Fale com um especialista</a>
+            <a href="#contact" class="hero-cta">Fale com um especialista</a>
         </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2>Entre em contato</h2>
+            <p>Preencha o formulário abaixo e nossa equipe entrará em contato em breve.</p>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/admin@vieglin.com" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+                <label for="empresa">Nome da empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição do problema</label>
+                <textarea id="descricao" name="descricao" placeholder="Descreva como podemos ajudar..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Enviar mensagem</button>
+        </form>
     </section>
 
     <footer>
