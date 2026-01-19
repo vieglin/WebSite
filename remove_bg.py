@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-input_path = "logo.jpeg"
+input_path = "logo-vieglin.png"
 output_path = "logo.png"
 
 # Read image
