@@ -579,6 +579,34 @@
             }
         }
 
+        /* Dashboard Preview Section */
+        .dashboard-preview {
+            padding: 100px 80px;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.2);
+        }
+
+        .dashboard-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-preview {
+                padding: 50px 20px;
+            }
+            .dashboard-container {
+                border-radius: 12px;
+            }
+        }
+
         /* Contact Form Section */
         .contact-section {
             padding: 100px 80px;
@@ -788,6 +816,16 @@
                 <h3>Deixe o Vieglin Maestro® otimizar</h3>
                 <p>Nossa IA gera a sequência ideal respeitando todas as suas restrições.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="dashboard-preview">
+        <div class="section-header">
+            <h2>Visualize suas operações em tempo real</h2>
+            <p>Um painel completo para sequenciar, acompanhar e otimizar cada ordem de serviço.</p>
+        </div>
+        <div class="dashboard-container">
+            <img src="Dashboard.JPG" alt="Vieglin Maestro Dashboard - Sequenciador de Ordens de Serviço">
         </div>
     </section>
 
