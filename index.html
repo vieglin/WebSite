@@ -1113,14 +1113,14 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Sequenciamento de Expedição que Respeita suas <span>Restrições Operacionais</span></h1>
+            <h1>Sequenciamento de Expedição que Respeita suas <span>Regras Operacionais</span></h1>
             <p class="hero-subtitle">
-                Vieglin Maestro® consome dados do seu WMS, captura suas restrições e gera uma sequência de expedição executável—com responsabilidade clara por ordem de serviço.
+                Vieglin Maestro® consome dados do seu WMS, captura suas restrições, adapta a novas regras e gera uma sequência de expedição executável.
             </p>
             <ul class="hero-bullets">
-                <li>Funciona com qualquer número de docas. Sem mudanças de infraestrutura.</li>
+                <li>Funciona com qualquer número de docas.</li>
                 <li>Integra via API ou exportação CSV do seu WMS existente.</li>
-                <li>Atribui um responsável a cada ordem de serviço para prestação de contas clara.</li>
+                <li>Realiza o apontamento de operador por ordem de serviço.</li>
             </ul>
             <a href="#contact" class="hero-cta">Executar Piloto em Shadow Mode</a>
         </div>
@@ -1144,7 +1144,7 @@
                     <p>Replanejamento leva horas quando uma única restrição muda</p>
                 </div>
                 <div class="problem-item">
-                    <p>Sem responsabilidade clara—quando pedidos atrasam, ninguém sabe quem era o responsável</p>
+                    <p>Sem responsabilidade clara: quando pedidos atrasam, ninguém sabe quem era o responsável</p>
                 </div>
             </div>
         </div>
@@ -1153,9 +1153,9 @@
     <!-- What Vieglin Does -->
     <section class="what-we-do">
         <div class="what-we-do-content">
-            <h2>O que a Vieglin Faz</h2>
+            <h2>O que o Vieglin Maestro® Faz</h2>
             <p>
-                Vieglin Maestro® é um software de sequenciamento de expedição para centros de distribuição. Ele ingere dados operacionais do seu WMS (via API ou CSV), coleta suas restrições através de um Agente de Restrições, e executa um motor de otimização que produz uma sequência de expedição viável. Cada ordem de serviço é atribuída a um responsável. Quando inputs mudam—uma transportadora atrasa, uma doca fica indisponível—o sistema re-executa o sequenciamento em segundos.
+                Vieglin Maestro® é um software de sequenciamento de expedição para centros de distribuição. Ele gera uma representação virtual do seu CD, ingere dados operacionais do seu WMS (via API ou CSV), hospeda um Agente de IA que adapta o planejamento a novas regras e situações operacionais, e executa um motor de otimização que produz uma sequência de expedição viável. Cada ordem de serviço é apontada a um operador responsável. Quando inputs mudam—uma transportadora atrasa, uma doca fica indisponível—o sistema re-executa o sequenciamento em segundos.
             </p>
         </div>
     </section>
@@ -1164,13 +1164,13 @@
     <section class="how-it-works" id="how-it-works">
         <div class="section-header">
             <h2>Como Funciona</h2>
-            <p>Inputs → Agente de Restrições → Otimização → Outputs</p>
+            <p>Inputs → Agente Vieglin Maestro® → Otimização → Outputs</p>
         </div>
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
                 <h3>Inputs (do WMS)</h3>
-                <p>Ingere ordens de serviço com SKU, quantidade, destino, transportadora e horário de cutoff.</p>
+                <p>Ingere ordens de serviço com SKUs, endereços de estoque, quantidade, doca e horário de cutoff.</p>
                 <ul>
                     <li>Janelas de disponibilidade de docas</li>
                     <li>Backlog atual e status dos pedidos</li>
@@ -1179,8 +1179,8 @@
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h3>Agente de Restrições</h3>
-                <p>Coleta restrições via linguagem natural ou inputs estruturados. Valida e traduz para termos do modelo.</p>
+                <h3>Agente Vieglin Maestro®</h3>
+                <p>Permite que usuários interajam com o sistema via chat atualizando novas regras operacionais. O agente injeta novas regras no modelo de otimização e re-executa o sequenciamento.</p>
                 <ul>
                     <li>Restrições rígidas (deve satisfazer)</li>
                     <li>Restrições flexíveis (penalidades)</li>
@@ -1200,7 +1200,7 @@
             <div class="step-card">
                 <div class="step-number">4</div>
                 <h3>Outputs</h3>
-                <p>Plano de sequenciamento executável para operadores com responsáveis atribuídos por ordem.</p>
+                <p>Plano de sequenciamento executável para operadores com responsáveis atribuídos por OS.</p>
                 <ul>
                     <li>Explicabilidade: por que cada ordem está sequenciada</li>
                     <li>Exportação CSV ou push via API</li>
