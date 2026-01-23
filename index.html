@@ -1334,7 +1334,7 @@
                     <h3>Etapas</h3>
                     <ul>
                         <li>Conectar dados do WMS (API ou CSV)</li>
-                        <li>Configurar restrições com o Agente de Restrições</li>
+                        <li>Informar Agente de IA de novas restrições operacionais em tempo real</li>
                         <li>Rodar sequenciamento shadow por 2–4 semanas</li>
                         <li>Comparar sequência Vieglin vs. expedição real</li>
                     </ul>
@@ -1402,14 +1402,14 @@
                 <h4>Situação</h4>
                 <p>Um CD tem 12 docas e 200 pedidos de expedição. Três transportadoras têm janelas de cutoff sobrepostas (13:00–14:30). Planejamento manual leva 2+ horas e frequentemente resulta em 5–10 pedidos perdendo o cutoff.</p>
                 <h4>Abordagem Vieglin</h4>
-                <p>Ingere todos os pedidos e cutoffs como restrições rígidas. Agente de Restrições sinaliza sobre-alocação. Otimização redistribui pedidos pelas docas disponíveis. Resultado: zero pedidos perdem cutoff; tempo de planejamento cai para 15 minutos.</p>
+                <p>Ingere todos os pedidos e cutoffs como restrições rígidas. Agente de IA sinaliza sobre-alocação. Otimização redistribui pedidos pelas docas disponíveis. Resultado: zero pedidos perdem cutoff; tempo de planejamento cai para 15 minutos.</p>
             </div>
             <div class="scenario-card">
                 <h3>Cenário 2: Doca Indisponível no Meio do Turno</h3>
                 <h4>Situação</h4>
                 <p>Doca 2 fica offline às 10:30 devido a falha de equipamento. 15 pedidos estavam programados para a Doca 2 entre 10:30 e 14:00.</p>
                 <h4>Abordagem Vieglin</h4>
-                <p>Supervisor marca Doca 2 como indisponível via Agente de Restrições. Re-executa sequenciamento: 15 pedidos reatribuídos para outras docas. Nova sequência gerada em &lt;30 segundos. Responsáveis reatribuídos com explicabilidade completa.</p>
+                <p>Supervisor marca Doca 2 como indisponível via Agente de IA. Re-executa sequenciamento: 15 pedidos reatribuídos para outras docas. Nova sequência gerada em &lt;30 segundos. Responsáveis reatribuídos com explicabilidade completa.</p>
             </div>
         </div>
     </section>
@@ -1425,22 +1425,22 @@
                 <div class="roadmap-card current">
                     <div class="phase">Agora</div>
                     <h4>Sequenciamento de Expedição</h4>
-                    <p>Agente de Restrições + otimização para sequenciamento de expedição</p>
+                    <p>Agente de IA + otimização para sequenciamento de expedição</p>
                 </div>
                 <div class="roadmap-card future">
                     <div class="phase">Próximo</div>
                     <h4>Integração Multi-Sistema</h4>
-                    <p>Conectividade TMS, YMS</p>
+                    <p>Conectividade TMS, YMS, WMS, ERP, etc.</p>
                 </div>
                 <div class="roadmap-card future">
                     <div class="phase">Depois</div>
-                    <h4>Orquestração Cross-Funcional</h4>
-                    <p>Coordenação inbound + outbound</p>
+                    <h4>Orquestração Cross-Funcional e Logística 4.0</h4>
+                    <p>Coordenação inbound + outbound + Planejamento de Carregamento + cross-docking</p>
                 </div>
                 <div class="roadmap-card future">
                     <div class="phase">Futuro</div>
-                    <h4>Digital Twin</h4>
-                    <p>Simulação e planejamento de cenários</p>
+                    <h4>Gêmeos Digitais e Agentes de Controle</h4>
+                    <p>Simulação e planejamento de cenários com gêmeos digitais e controle de operações com sistemas multi-agênticos</p>
                 </div>
             </div>
         </div>
