@@ -16,6 +16,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0a1628;
             color: #e0e8f0;
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -963,20 +964,21 @@
         .dashboard-preview {
             padding: 100px 80px;
             background: rgba(15, 30, 50, 0.5);
+            overflow: hidden;
         }
 
         .dashboard-container {
-            max-width: 1200px;
+            width: 80%;
+            max-width: 2000px;
             margin: 0 auto;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 25px 80px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.2);
         }
 
         .dashboard-container img {
             width: 100%;
             height: auto;
             display: block;
+            border: none;
+            outline: none;
         }
 
         @media (max-width: 768px) {
@@ -985,6 +987,104 @@
             }
             .dashboard-container {
                 border-radius: 12px;
+            }
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-caption {
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 16px;
+            font-size: 1.1em;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(59, 130, 246, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(59, 130, 246, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-prev {
+            left: 20px;
+        }
+
+        .slider-next {
+            right: 20px;
+        }
+
+        .slider-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 6px;
+            background: rgba(96, 165, 250, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active, .dot:hover {
+            background: #60a5fa;
+        }
+
+        @media (max-width: 768px) {
+            .slider-container {
+                padding: 0 40px;
+            }
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
             }
         }
 
@@ -1116,11 +1216,11 @@
         <div class="hero-content">
             <h1>O Sistema Operacional de <span>Centros de Distribuição</span></h1>
             <p class="hero-subtitle">
-                Transformamos Centros de Distribuição em sistemas orquestrados por dados e decisões inteligentes. O Vieglin Maestro® usa Agentes de IA para otimizar a cadeia de processos do seu CD.
+                Transformamos Centros de Distribuição em sistemas orquestrados por dados e decisões inteligentes. O Vieglin Maestro® otimiza a cadeia de processos do seu CD automaticamente.
             </p>
             <ul class="hero-bullets">
                 <li>Integra com WMS, ERP e TMS via gateway proprietário seguro (LGPD compliant).</li>
-                <li>Agentes de IA orquestram processos de separação, recebimento e abastecimento.</li>
+                <li>Orquestra processos de separação, recebimento e abastecimento automaticamente.</li>
                 <li>Gera plano executável com responsável atribuído e explicabilidade completa.</li>
             </ul>
             <a href="#contact" class="hero-cta">Executar Piloto em Shadow Mode</a>
@@ -1156,7 +1256,7 @@
         <div class="what-we-do-content">
             <h2>O que o Vieglin Maestro® Faz</h2>
             <p>
-                O Vieglin Maestro® é a inteligência que orquestra os processos do Centro de Distribuição para que tudo aconteça no tempo certo, no lugar certo e sem fricção. Nossa plataforma é composta por três camadas: <strong>Engine Vieglin</strong> (fábrica de agentes de IA), <strong>Vieglin Maestro Suite</strong> (aplicações para separação, recebimento, abastecimento e carregamento) e <strong>Data Lakehouse</strong> (integração de dados com WMS, ERP e TMS via gateway proprietário). Quando inputs mudam, o sistema re-executa o sequenciamento em segundos.
+                O Vieglin Maestro® é a inteligência que orquestra os processos do Centro de Distribuição para que tudo aconteça no tempo certo, no lugar certo e sem fricção. Integra com seu WMS, ERP e TMS, captura suas restrições operacionais e gera sequenciamentos otimizados automaticamente. Quando inputs mudam, o sistema re-executa o sequenciamento em segundos.
             </p>
         </div>
     </section>
@@ -1165,9 +1265,9 @@
     <section class="how-it-works" id="how-it-works">
         <div class="section-header">
             <h2>Como Funciona</h2>
-            <p>Inputs → Agente Vieglin Maestro® → Otimização → Outputs</p>
+            <p>Inputs → Vieglin Maestro® → Outputs</p>
         </div>
-        <div class="steps-grid">
+        <div class="steps-grid" style="grid-template-columns: repeat(3, 1fr);">
             <div class="step-card">
                 <div class="step-number">1</div>
                 <h3>Inputs (do WMS)</h3>
@@ -1180,26 +1280,16 @@
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h3>Agente Vieglin Maestro®</h3>
-                <p>Permite que usuários interajam com o sistema via chat atualizando novas regras operacionais. O agente injeta novas regras no modelo de otimização e re-executa o sequenciamento.</p>
+                <h3>Vieglin Maestro®</h3>
+                <p>Permite interação via chat para atualizar regras operacionais. Gera sequência otimizada respeitando todas as restrições.</p>
                 <ul>
-                    <li>Restrições rígidas (deve satisfazer)</li>
-                    <li>Restrições flexíveis (penalidades)</li>
+                    <li>Restrições rígidas e flexíveis</li>
                     <li>Detecta conflitos e ambiguidades</li>
+                    <li>Minimiza atrasos e maximiza utilização</li>
                 </ul>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h3>Motor de Otimização</h3>
-                <p>Gera uma sequência viável respeitando todas as restrições rígidas e otimizando objetivos.</p>
-                <ul>
-                    <li>Minimizar embarques atrasados</li>
-                    <li>Maximizar utilização das docas</li>
-                    <li>Reduzir esforço de replanejamento</li>
-                </ul>
-            </div>
-            <div class="step-card">
-                <div class="step-number">4</div>
                 <h3>Outputs</h3>
                 <p>Plano de sequenciamento executável para operadores com responsáveis atribuídos por OS.</p>
                 <ul>
@@ -1214,28 +1304,23 @@
     <!-- POC Results Section -->
     <section class="stats">
         <div class="stats-header">
-            <h3>Resultados Comprovados em POC</h3>
+            <h3>Alguns Resultados Coletados</h3>
             <p>50 dias de testes em operação real. Mesma quantidade de OS, cargas, operadores e produtividade entre real e simulado.</p>
         </div>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">💰</div>
-                <div class="stat-label">Economia Significativa</div>
-                <div class="stat-desc">Redução expressiva de custos operacionais com hora-homem e atrasos de carga</div>
-            </div>
+        <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
             <div class="stat-card">
                 <div class="stat-icon">⏱️</div>
-                <div class="stat-label">Tempo Total Reduzido</div>
+                <div class="stat-label">-20% Tempo Total</div>
                 <div class="stat-desc">Redução consistente do tempo total de trabalho por turno</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">👷</div>
-                <div class="stat-label">Menos Ociosidade</div>
+                <div class="stat-label">-40% Ociosidade</div>
                 <div class="stat-desc">Redução de ociosidade de operadores com balanceamento inteligente</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">⚖️</div>
-                <div class="stat-label">Conformidade CLT</div>
+                <div class="stat-label">-100% Violações CLT</div>
                 <div class="stat-desc">Redução de violações CLT incluindo pausas Art. 253</div>
             </div>
         </div>
@@ -1244,8 +1329,8 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="section-header">
-            <h2>O que o Agente Vieglin Maestro® Faz</h2>
-            <p>O Agente de IA é uma interface estruturada entre seu conhecimento operacional e o modelo de otimização.</p>
+            <h2>Capacidades do Vieglin Maestro®</h2>
+            <p>Uma interface inteligente entre seu conhecimento operacional e a otimização do sequenciamento.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
@@ -1260,8 +1345,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⚙️</div>
-                <h3>Tradução para o Modelo</h3>
-                <p>Traduz restrições em restrições rígidas (deve satisfazer) ou restrições flexíveis com penalidades (deve otimizar).</p>
+                <h3>Otimização Inteligente</h3>
+                <p>Processa restrições rígidas (deve satisfazer) e flexíveis (deve otimizar) para gerar o melhor sequenciamento possível.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">👁️</div>
@@ -1316,23 +1401,60 @@
     <section class="dashboard-preview">
         <div class="section-header">
             <h2>Visão Geral da Plataforma</h2>
-            <p>Interface intuitiva para visualizar sequenciamento, acompanhar operações em tempo real e interagir com o Agente de IA.</p>
+            <p>Interface intuitiva para visualizar sequenciamento, acompanhar operações em tempo real e interagir com o Maestro.</p>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto;">
-            <div class="dashboard-container">
-                <img src="Home.JPG" alt="Vieglin Maestro - Dashboard Principal">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <button class="slider-arrow slider-prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="slider-arrow slider-next" onclick="changeSlide(1)">&#10095;</button>
+                <div class="slide active">
+                    <div class="dashboard-container">
+                        <img src="Home2.JPG" alt="Vieglin Maestro - Visão de Operações">
+                    </div>
+                    <p class="slide-caption">Visão de Operações</p>
+                </div>
+                <div class="slide">
+                    <div class="dashboard-container">
+                        <img src="Home3.JPG" alt="Vieglin Maestro - Acompanhamento em Tempo Real">
+                    </div>
+                    <p class="slide-caption">Acompanhamento em Tempo Real</p>
+                </div>
+                <div class="slide">
+                    <div class="dashboard-container">
+                        <img src="Home4.JPG" alt="Vieglin Maestro - Painel de Controle">
+                    </div>
+                    <p class="slide-caption">Painel de Controle</p>
+                </div>
             </div>
-            <div class="dashboard-container">
-                <img src="Home2.JPG" alt="Vieglin Maestro - Visão de Operações">
-            </div>
-            <div class="dashboard-container">
-                <img src="Home3.JPG" alt="Vieglin Maestro - Acompanhamento em Tempo Real">
-            </div>
-            <div class="dashboard-container">
-                <img src="Home4.JPG" alt="Vieglin Maestro - Painel de Controle">
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
             </div>
         </div>
     </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+    </script>
 
     <!-- Pilot Section -->
     <section class="pilot-section" id="pilot">
@@ -1346,7 +1468,7 @@
                     <h3>Etapas</h3>
                     <ul>
                         <li>Conectar dados do WMS (API ou CSV)</li>
-                        <li>Informar Agente de IA de novas restrições operacionais em tempo real</li>
+                        <li>Informar o Maestro de novas restrições operacionais em tempo real</li>
                         <li>Rodar sequenciamento shadow por 2–4 semanas</li>
                         <li>Comparar sequência Vieglin vs. expedição real</li>
                     </ul>
@@ -1439,14 +1561,14 @@
                 <h4>Situação</h4>
                 <p>Um CD tem 12 docas e 200 pedidos de expedição. Três transportadoras têm janelas de cutoff sobrepostas (13:00–14:30). Planejamento manual leva 2+ horas e frequentemente resulta em 5–10 pedidos perdendo o cutoff.</p>
                 <h4>Abordagem Vieglin</h4>
-                <p>Ingere todos os pedidos e cutoffs como restrições rígidas. Agente de IA sinaliza sobre-alocação. Otimização redistribui pedidos pelas docas disponíveis. Resultado: zero pedidos perdem cutoff; tempo de planejamento cai para 15 minutos.</p>
+                <p>Ingere todos os pedidos e cutoffs como restrições rígidas. O Maestro sinaliza sobre-alocação e redistribui pedidos pelas docas disponíveis. Resultado: zero pedidos perdem cutoff; tempo de planejamento cai para 15 minutos.</p>
             </div>
             <div class="scenario-card">
                 <h3>Cenário 2: Doca Indisponível no Meio do Turno</h3>
                 <h4>Situação</h4>
                 <p>Doca 2 fica offline às 10:30 devido a falha de equipamento. 15 pedidos estavam programados para a Doca 2 entre 10:30 e 14:00.</p>
                 <h4>Abordagem Vieglin</h4>
-                <p>Supervisor marca Doca 2 como indisponível via Agente de IA. Re-executa sequenciamento: 15 pedidos reatribuídos para outras docas. Nova sequência gerada em &lt;30 segundos. Responsáveis reatribuídos com explicabilidade completa.</p>
+                <p>Supervisor marca Doca 2 como indisponível no Maestro. Re-executa sequenciamento: 15 pedidos reatribuídos para outras docas. Nova sequência gerada em &lt;30 segundos. Responsáveis reatribuídos com explicabilidade completa.</p>
             </div>
         </div>
     </section>
