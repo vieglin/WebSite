@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vieglin Maestro® - Sistema Operacional para Centros de Distribuição</title>
-    <link rel="icon" type="image/png" href="maestro-agent.png">
+    <link rel="icon" type="image/png" href="assets/images/maestro-agent.png">
     <style>
         * {
             margin: 0;
@@ -1181,12 +1181,11 @@
 <body>
     <nav>
         <div class="nav-logo">
-            <img src="logo.png" alt="Vieglin">
+            <img src="assets/images/logo.png" alt="Vieglin">
         </div>
         <div class="nav-links" id="navLinks">
             <a href="#how-it-works">Como Funciona</a>
             <a href="#pilot">Piloto</a>
-            <a href="#team">Time</a>
             <a href="#contact" class="nav-cta">Iniciar Piloto</a>
         </div>
         <div class="mobile-menu-toggle" id="menuToggle" onclick="toggleMenu()">
@@ -1210,7 +1209,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="landing.mp4" type="video/mp4">
+            <source src="assets/videos/landing.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -1310,17 +1309,17 @@
         <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
             <div class="stat-card">
                 <div class="stat-icon">⏱️</div>
-                <div class="stat-label">-20% Tempo Total</div>
+                <div class="stat-label">Redução de 20% no Tempo Total</div>
                 <div class="stat-desc">Redução consistente do tempo total de trabalho por turno</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">👷</div>
-                <div class="stat-label">-40% Ociosidade</div>
+                <div class="stat-label">Redução de 40% na Ociosidade</div>
                 <div class="stat-desc">Redução de ociosidade de operadores com balanceamento inteligente</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">⚖️</div>
-                <div class="stat-label">-100% Violações CLT</div>
+                <div class="stat-label">Eliminação Total de Violações CLT</div>
                 <div class="stat-desc">Redução de violações CLT incluindo pausas Art. 253</div>
             </div>
         </div>
@@ -1330,7 +1329,7 @@
     <section class="features" id="features">
         <div class="section-header">
             <h2>Capacidades do Vieglin Maestro®</h2>
-            <p>Uma interface inteligente entre seu conhecimento operacional e a otimização do sequenciamento.</p>
+            <p>O Maestro é reativo: monitora o estado atual das operações e atualiza o plano de ação dinamicamente conforme restrições e condições mudam em tempo real.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
@@ -1345,8 +1344,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⚙️</div>
-                <h3>Otimização Inteligente</h3>
-                <p>Processa restrições rígidas (deve satisfazer) e flexíveis (deve otimizar) para gerar o melhor sequenciamento possível.</p>
+                <h3>Otimização Dinâmica e Reativa</h3>
+                <p>Processa restrições rígidas (deve satisfazer) e flexíveis (deve otimizar) para gerar o melhor sequenciamento possível. O plano é recalculado automaticamente sempre que o estado das operações ou as restrições mudam.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">👁️</div>
@@ -1360,8 +1359,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔄</div>
-                <h3>Tratamento de Exceções</h3>
-                <p>Quando inputs mudam (doca indisponível, atraso de transportadora), re-executa sequenciamento em segundos. Novos responsáveis atribuídos com explicabilidade completa.</p>
+                <h3>Reatividade em Tempo Real</h3>
+                <p>Quando inputs mudam (doca indisponível, atraso de transportadora, nova restrição operacional), o Maestro detecta a mudança e atualiza o plano de ação em segundos. Novos responsáveis atribuídos com explicabilidade completa.</p>
             </div>
         </div>
     </section>
@@ -1396,65 +1395,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Dashboard Preview -->
-    <section class="dashboard-preview">
-        <div class="section-header">
-            <h2>Visão Geral da Plataforma</h2>
-            <p>Interface intuitiva para visualizar sequenciamento, acompanhar operações em tempo real e interagir com o Maestro.</p>
-        </div>
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <button class="slider-arrow slider-prev" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="slider-arrow slider-next" onclick="changeSlide(1)">&#10095;</button>
-                <div class="slide active">
-                    <div class="dashboard-container">
-                        <img src="Home2.JPG" alt="Vieglin Maestro - Visão de Operações">
-                    </div>
-                    <p class="slide-caption">Visão de Operações</p>
-                </div>
-                <div class="slide">
-                    <div class="dashboard-container">
-                        <img src="Home3.JPG" alt="Vieglin Maestro - Acompanhamento em Tempo Real">
-                    </div>
-                    <p class="slide-caption">Acompanhamento em Tempo Real</p>
-                </div>
-                <div class="slide">
-                    <div class="dashboard-container">
-                        <img src="Home4.JPG" alt="Vieglin Maestro - Painel de Controle">
-                    </div>
-                    <p class="slide-caption">Painel de Controle</p>
-                </div>
-            </div>
-            <div class="slider-dots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-                <span class="dot" onclick="goToSlide(2)"></span>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-
-        function changeSlide(direction) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function goToSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            currentSlide = index;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-    </script>
 
     <!-- Pilot Section -->
     <section class="pilot-section" id="pilot">
@@ -1608,7 +1548,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <video class="cta-video" autoplay muted loop playsinline>
-            <source src="truck.mp4" type="video/mp4">
+            <source src="assets/videos/truck.mp4" type="video/mp4">
         </video>
         <div class="cta-overlay"></div>
         <div class="cta-box">
@@ -1661,45 +1601,12 @@
         </form>
     </section>
 
-    <!-- Team Section -->
-    <section class="for-whom" id="team">
-        <div class="for-whom-content">
-            <div class="section-header">
-                <h2>Time</h2>
-                <p>Co-fundadores com experiência complementar em tecnologia e negócios.</p>
-            </div>
-            <div class="for-whom-grid">
-                <div class="for-whom-card" style="text-align: center;">
-                    <img src="ThiagoViek.JPG" alt="Thiago Viek" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid rgba(96, 165, 250, 0.3);">
-                    <h3>Thiago Viek</h3>
-                    <p style="color: #60a5fa; margin-bottom: 16px;">Co-fundador Técnico</p>
-                    <ul style="text-align: left;">
-                        <li>Engenheiro Mecânico / UFSC</li>
-                        <li>Senior AI Engineer e Tech Lead na Loka Inc. (San Francisco, EUA)</li>
-                        <li>Arquiteto de Soluções AWS</li>
-                        <li>8 anos de experiência com IA</li>
-                    </ul>
-                </div>
-                <div class="for-whom-card" style="text-align: center;">
-                    <img src="ThomasKoglin.JPG" alt="Thomas Koglin" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid rgba(96, 165, 250, 0.3);">
-                    <h3>Thomas Koglin</h3>
-                    <p style="color: #60a5fa; margin-bottom: 16px;">Co-fundador Comercial</p>
-                    <ul style="text-align: left;">
-                        <li>Bacharel em Direito / FURB</li>
-                        <li>Gerente de contas</li>
-                        <li>Consultor financeiro</li>
-                        <li>Experiência em vendas B2B e relacionamento com clientes</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="footer-content">
             <div class="footer-info">
                 <p><a href="tel:+5547988640960">+55 (47) 98864-0960</a> | <a href="mailto:admin@vieglin.com">admin@vieglin.com</a></p>
-                <p>Rua Amazonas 2011, Sala 1, Blumenau SC 89021001</p>
+                <p>Rua Floriano Peixoto 55, Sala 402, Blumenau SC 89010-022</p>
+                <p>CNPJ: 65.886.239/0001-56</p>
             </div>
         </div>
     </footer>
