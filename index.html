@@ -1883,6 +1883,13 @@ a {
   opacity: 0.45;
   cursor: not-allowed;
 }
+.fd-select {
+  color-scheme: dark;
+}
+.fd-select option {
+  background: #02061a;
+  color: var(--fd-text);
+}
 .fd-textarea {
   resize: vertical;
   min-height: 116px;
@@ -2790,7 +2797,7 @@ function DirCinematica({ onNavigate }) {
             <a href="#clients">Clientes</a>
             <a href="#contact">Contato</a>
           </nav>
-          <a className="dirA-cta" href="#" onClick={(e) => { e.preventDefault(); onNavigate("form"); }} style={{ color: "rgb(224, 242, 254)" }}>Agendar demonstração →</a>
+          <a className="dirA-cta" href="#" onClick={(e) => { e.preventDefault(); onNavigate("form"); }} style={{ color: "rgb(224, 242, 254)" }}>Iniciar piloto →</a>
         </div>
       </header>
 
@@ -2951,7 +2958,7 @@ function DirCinematica({ onNavigate }) {
             possível antes de qualquer integração.
           </p>
           <div className="dirA-cta-band__row">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("form"); }} className="dirA-cta dirA-cta--solid" style={{ backgroundColor: "rgb(102, 239, 255)" }}>Agendar demonstração →</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("form"); }} className="dirA-cta dirA-cta--solid" style={{ backgroundColor: "rgb(102, 239, 255)" }}>Iniciar piloto →</a>
             <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("form"); }} className="dirA-cta dirA-cta--ghost">Falar com vendas</a>
           </div>
         </div>
@@ -2999,15 +3006,15 @@ function DirCinematica({ onNavigate }) {
 
 
 
-// ── Demo scheduling form ─────────────────────────────────────────────
+// ── Pilot contact form ───────────────────────────────────────────────
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/thomas@vieglin.com';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjjvkdv';
 
 const { useState } = React;
 
 function FormDemo({ onNavigate }) {
   const [fields, setFields] = useState({
-    nome: '', email: '', telefone: '', empresa: '', problema: '',
+    name: '', company: '', role: '', email: '', docks: '', challenge: '',
   });
   const [status, setStatus]   = useState('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -3021,12 +3028,13 @@ function FormDemo({ onNavigate }) {
     setStatus('loading');
     setErrorMsg('');
     try {
+      const formData = new FormData(e.currentTarget);
       const res  = await fetch(FORMSPREE_ENDPOINT, {
         method:  'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify(fields),
+        headers: { 'Accept': 'application/json' },
+        body:    formData,
       });
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setStatus('success');
       } else {
@@ -3073,23 +3081,22 @@ function FormDemo({ onNavigate }) {
 
           {/* Left — info */}
           <div className="fd-info">
-            <div className="fd-info__eyebrow">// Demonstração</div>
+            <div className="fd-info__eyebrow">// Piloto</div>
             <h1 className="fd-info__h1">
-              Veja o Maestro<br />na sua operação.
+              Inicie seu piloto<br />em Shadow Mode.
             </h1>
             <p className="fd-info__sub">
-              Em 45 minutos percorremos o caminho completo — da ordem de serviço ao plano
-              de picking — com os seus dados reais, e mostramos quanta eficiência está
-              sendo desperdiçada hoje. Sem integração, sem compromisso.
+              Preencha o formulário e nossa equipe entrará em contato para discutir
+              o perfil do seu CD, os dados disponíveis e o escopo do piloto.
             </p>
             <div className="fd-info__divider" />
             <ul className="fd-info__list">
-              <li>Diagnóstico do fluxo de ordens de serviço no seu CD</li>
-              <li>Simulação de plano de picking com o Maestro</li>
-              <li>Estimativa de ROI para o seu volume</li>
+              <li>Conectar dados do WMS por API ou CSV</li>
+              <li>Rodar sequenciamento shadow por 2-4 semanas</li>
+              <li>Comparar sequência Vieglin vs. expedição real</li>
             </ul>
             <p className="fd-info__note">
-              Resultados medidos em produção: +15% de eficiência operacional e −40% de ociosidade dos operadores.
+              Sem risco operacional. Sem mudança de processo até você ver resultados.
             </p>
           </div>
 
@@ -3100,65 +3107,80 @@ function FormDemo({ onNavigate }) {
                 <div className="fd-success__icon">✓</div>
                 <h2 className="fd-success__title">Solicitação recebida.</h2>
                 <p className="fd-success__sub">
-                  Em breve entraremos em contato para confirmar o horário da demonstração.
+                  Em breve entraremos em contato para discutir o perfil do seu CD e o escopo do piloto.
                 </p>
                 <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("home"); }} className="fd-btn fd-btn--ghost">
                   ← Voltar ao início
                 </a>
               </div>
             ) : (
-              <form className="fd-form" onSubmit={handleSubmit}>
+              <form className="fd-form" action={FORMSPREE_ENDPOINT} method="POST" onSubmit={handleSubmit}>
 
                 <div className="fd-form__head">
-                  <span className="fd-form__tag">Agendar Demonstração</span>
+                  <span className="fd-form__tag">Inicie seu Piloto</span>
                 </div>
 
                 <div className="fd-field">
-                  <label className="fd-label" htmlFor="nome">Nome completo</label>
+                  <label className="fd-label" htmlFor="name">Nome</label>
                   <input
-                    className="fd-input" id="nome" name="nome" type="text"
-                    required placeholder="João da Silva"
-                    value={fields.nome} onChange={handleChange} disabled={loading}
-                  />
-                </div>
-
-                <div className="fd-field-row">
-                  <div className="fd-field">
-                    <label className="fd-label" htmlFor="email">E-mail corporativo</label>
-                    <input
-                      className="fd-input" id="email" name="email" type="email"
-                      required placeholder="joao@empresa.com.br"
-                      value={fields.email} onChange={handleChange} disabled={loading}
-                    />
-                  </div>
-                  <div className="fd-field">
-                    <label className="fd-label" htmlFor="telefone">Telefone / WhatsApp</label>
-                    <input
-                      className="fd-input" id="telefone" name="telefone" type="tel"
-                      required placeholder="+55 47 9 0000-0000"
-                      value={fields.telefone} onChange={handleChange} disabled={loading}
-                    />
-                  </div>
-                </div>
-
-                <div className="fd-field">
-                  <label className="fd-label" htmlFor="empresa">Empresa</label>
-                  <input
-                    className="fd-input" id="empresa" name="empresa" type="text"
-                    required placeholder="Nome da empresa ou grupo"
-                    value={fields.empresa} onChange={handleChange} disabled={loading}
+                    className="fd-input" id="name" name="name" type="text"
+                    required placeholder="Seu nome"
+                    value={fields.name} onChange={handleChange} disabled={loading}
                   />
                 </div>
 
                 <div className="fd-field">
-                  <label className="fd-label" htmlFor="problema">
-                    Qual o principal problema da sua operação?
+                  <label className="fd-label" htmlFor="company">Empresa</label>
+                  <input
+                    className="fd-input" id="company" name="company" type="text"
+                    required placeholder="Nome da empresa"
+                    value={fields.company} onChange={handleChange} disabled={loading}
+                  />
+                </div>
+
+                <div className="fd-field">
+                  <label className="fd-label" htmlFor="role">Cargo</label>
+                  <select
+                    className="fd-input fd-select" id="role" name="role"
+                    required value={fields.role} onChange={handleChange} disabled={loading}
+                  >
+                    <option value="">Selecione seu cargo</option>
+                    <option value="Gerente de CD">Gerente de CD</option>
+                    <option value="Supervisor de Expedição">Supervisor de Expedição</option>
+                    <option value="Gerente de Operações">Gerente de Operações</option>
+                    <option value="Melhoria Contínua">Melhoria Contínua</option>
+                    <option value="TI/WMS">TI/WMS</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+
+                <div className="fd-field">
+                  <label className="fd-label" htmlFor="email">E-mail</label>
+                  <input
+                    className="fd-input" id="email" name="email" type="email"
+                    required placeholder="seu@email.com"
+                    value={fields.email} onChange={handleChange} disabled={loading}
+                  />
+                </div>
+
+                <div className="fd-field">
+                  <label className="fd-label" htmlFor="docks">Número de Docas</label>
+                  <input
+                    className="fd-input" id="docks" name="docks" type="text"
+                    placeholder="ex.: 8, 12, 20+"
+                    value={fields.docks} onChange={handleChange} disabled={loading}
+                  />
+                </div>
+
+                <div className="fd-field">
+                  <label className="fd-label" htmlFor="challenge">
+                    Principal Desafio de Sequenciamento
                   </label>
                   <textarea
-                    className="fd-input fd-textarea" id="problema" name="problema"
-                    required rows={4}
-                    placeholder="Ex: demora na separação de pedidos, erros de embarque, ociosidade dos operadores..."
-                    value={fields.problema} onChange={handleChange} disabled={loading}
+                    className="fd-input fd-textarea" id="challenge" name="challenge"
+                    rows={4}
+                    placeholder="Descreva seus principais desafios de sequenciamento de expedição (cutoffs de transportadoras, utilização de docas, frequência de replanejamento, etc.)"
+                    value={fields.challenge} onChange={handleChange} disabled={loading}
                   />
                 </div>
 
@@ -3170,11 +3192,11 @@ function FormDemo({ onNavigate }) {
                   <button className="fd-btn fd-btn--solid" type="submit" disabled={loading}>
                     {loading
                       ? <><span className="fd-spinner" /> Enviando...</>
-                      : 'Agendar demonstração →'
+                      : 'Solicitar Piloto em Shadow Mode'
                     }
                   </button>
                   <p className="fd-form__privacy">
-                    Seus dados são usados exclusivamente para o agendamento e nunca serão compartilhados com terceiros.
+                    Seus dados são usados exclusivamente para o contato e nunca serão compartilhados com terceiros.
                   </p>
                 </div>
 
