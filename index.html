@@ -1204,6 +1204,160 @@ body { font-family: 'Geist', 'Inter', sans-serif; -webkit-font-smoothing: antial
     white-space: normal;
   }
 }
+
+/* ── Responsive: site-wide ─────────────────────────────────── */
+
+/* 900px — tablet */
+@media (max-width: 900px) {
+  /* Nav */
+  .dirA-nav__inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding: 12px 24px;
+    gap: 16px;
+  }
+  .dirA-nav__links { display: none; }
+
+  /* Hero */
+  .dirA-hero { padding: 72px 0 48px; }
+  .dirA-hero__head {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  /* Stage / animation */
+  .dirA-stage { padding: 0 24px; }
+
+  /* Metric strip */
+  .dirA-hero__stripWrap { padding: 0 24px; }
+  .dirA-hero__strip { grid-template-columns: repeat(2, 1fr); }
+
+  /* Section heads */
+  .dirA-section-head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 24px;
+    margin-bottom: 36px;
+  }
+
+  /* Features */
+  .dirA-features { padding: 72px 0; }
+  .dirA-features__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0 24px;
+  }
+  .dirA-feature--lg { grid-row: span 1; }
+
+  /* How */
+  .dirA-how { padding: 72px 0; }
+  .dirA-how__rows { padding: 0 24px; }
+
+  /* CTA */
+  .dirA-cta-band__inner { padding: 80px 24px; }
+
+  /* Footer base */
+  .dirA-footer__base { padding: 20px 24px 28px; }
+}
+
+/* 600px — mobile */
+@media (max-width: 600px) {
+  /* Nav */
+  .dirA-nav__inner { padding: 12px 16px; gap: 10px; }
+
+  /* Hero */
+  .dirA-hero { padding: 56px 0 36px; }
+  .dirA-hero__head { padding: 0 16px; gap: 28px; }
+
+  /* Stage */
+  .dirA-stage { padding: 0 12px; }
+  .dirA-stage__title { display: none; }
+
+  /* Metric strip */
+  .dirA-hero__stripWrap { padding: 0 12px; }
+
+  /* Section heads */
+  .dirA-section-head { padding: 0 16px; margin-bottom: 24px; }
+
+  /* Features */
+  .dirA-features { padding: 56px 0; }
+  .dirA-features__grid { padding: 0 16px; gap: 12px; }
+  .dirA-feature--lg h3 { font-size: 26px; }
+
+  /* How */
+  .dirA-how { padding: 56px 0; }
+  .dirA-how__rows { padding: 0 16px; }
+  .dirA-how__row {
+    grid-template-columns: 44px 1fr;
+    gap: 8px 14px;
+    padding: 24px 0 18px;
+  }
+  .dirA-how__desc { grid-column: 1 / -1; }
+  .dirA-how__rule { display: none; }
+
+  /* CTA band */
+  .dirA-cta-band__inner { padding: 56px 16px; }
+  .dirA-cta-band__h { line-height: 1.05; }
+  .dirA-cta-band__row { flex-direction: column; align-items: stretch; }
+  .dirA-cta-band .dirA-cta { text-align: center; justify-content: center; }
+
+  /* Footer */
+  .dirA-footer__inner { padding: 40px 16px 28px; }
+  .dirA-footer__base {
+    padding: 16px 16px 28px;
+    grid-template-columns: 1fr;
+  }
+
+  /* Form */
+  .fd-main { padding: 40px 0 56px; }
+}
+
+/* 420px — small mobile */
+@media (max-width: 420px) {
+  .dirA-hero__head { gap: 20px; }
+  .dirA-hero__strip { grid-template-columns: repeat(2, 1fr); }
+  .dirA-how__row { grid-template-columns: 36px 1fr; gap: 6px 12px; }
+  .dirA-features__grid { padding: 0 12px; gap: 10px; }
+  .dirA-cta-band__inner { padding: 48px 12px; }
+}
+
+/* ── Landscape: phones e tablets em modo paisagem ─────────── */
+
+/* Phones em landscape (largura até 900px, orientação horizontal) */
+@media (max-width: 900px) and (orientation: landscape) {
+  /* Reduz paddings verticais pesados */
+  .dirA-hero          { padding: 40px 0 28px; }
+  .dirA-features      { padding: 48px 0; }
+  .dirA-how           { padding: 48px 0; }
+  .dirA-cta-band__inner { padding: 56px 24px; }
+
+  /* Hero: volta para 2 colunas em landscape — tem largura suficiente */
+  .dirA-hero__head {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* Section heads: 2 colunas de volta */
+  .dirA-section-head {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+}
+
+/* Landscape com altura muito limitada (< 500px — phones pequenos) */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Nav deixa de ser sticky para não roubar altura */
+  .dirA-nav { position: relative; }
+
+  .dirA-hero          { padding: 28px 0 20px; }
+  .dirA-hero__head    { gap: 20px; }
+  .dirA-features      { padding: 36px 0; }
+  .dirA-how           { padding: 36px 0; }
+  .dirA-cta-band__inner { padding: 40px 24px; }
+}
+
 .dirA-footer__base {
   max-width: 1320px;
   margin: 0 auto;
@@ -1886,9 +2040,71 @@ a {
 .fd-select {
   color-scheme: dark;
 }
+.fd-select:required:invalid {
+  color: rgba(125, 211, 252, 0.50);
+  font-size: 14px;
+}
 .fd-select option {
   background: #02061a;
   color: var(--fd-text);
+  font-family: var(--fd-sans);
+  font-size: 15px;
+}
+
+/* ── Custom Select ─────────────────────────────────────────── */
+.fd-csel {
+  position: relative;
+}
+.fd-csel__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+.fd-csel__trigger--placeholder {
+  color: rgba(125, 211, 252, 0.50);
+  font-size: 14px;
+}
+.fd-csel__trigger:not(.fd-csel__trigger--placeholder) {
+  color: var(--fd-text);
+  font-size: 15px;
+}
+.fd-csel__arrow {
+  flex-shrink: 0;
+  margin-left: 8px;
+  opacity: 0.5;
+  transition: transform .2s;
+}
+.fd-csel--open .fd-csel__arrow {
+  transform: rotate(180deg);
+}
+.fd-csel__list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #02061a;
+  border: 1px solid var(--fd-border);
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+}
+.fd-csel__option {
+  padding: 10px 16px;
+  font-family: var(--fd-sans);
+  font-size: 14px;
+  color: rgba(125, 211, 252, 0.50);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  margin: 0;
+}
+.fd-csel__option:hover,
+.fd-csel__option--active {
+  background: rgba(56, 189, 248, 0.08);
+  color: #7dd3fc;
 }
 .fd-textarea {
   resize: vertical;
@@ -2672,8 +2888,8 @@ window.startVieglinAnimation = startAnimation;
   </script>
 
   <!-- React 18 via CDN -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
   <script type="text/babel">
@@ -3008,13 +3224,59 @@ function DirCinematica({ onNavigate }) {
 
 // ── Pilot contact form ───────────────────────────────────────────────
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjjvkdv';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mlgvpezn';
 
 const { useState } = React;
 
+function CustomSelect({ name, id, value, onChange, options, placeholder, disabled }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handler = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  const selected = options.find(o => o.value === value);
+
+  return (
+    React.createElement('div', { ref, className: `fd-csel${open ? ' fd-csel--open' : ''}` },
+      React.createElement('button', {
+        type: 'button',
+        className: `fd-input fd-csel__trigger${!value ? ' fd-csel__trigger--placeholder' : ''}`,
+        onClick: () => { if (!disabled) setOpen(o => !o); },
+        disabled,
+        'aria-haspopup': 'listbox',
+        'aria-expanded': open,
+      },
+        React.createElement('span', null, selected ? selected.label : placeholder),
+        React.createElement('svg', {
+          className: 'fd-csel__arrow', width: 14, height: 14,
+          viewBox: '0 0 14 14', fill: 'none', xmlns: 'http://www.w3.org/2000/svg',
+        },
+          React.createElement('path', { d: 'M2 4.5L7 9.5L12 4.5', stroke: '#7dd3fc', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' })
+        )
+      ),
+      open && React.createElement('ul', { className: 'fd-csel__list', role: 'listbox' },
+        options.map(o =>
+          React.createElement('li', {
+            key: o.value,
+            className: `fd-csel__option${o.value === value ? ' fd-csel__option--active' : ''}`,
+            role: 'option',
+            'aria-selected': o.value === value,
+            onClick: () => { onChange({ target: { name, value: o.value } }); setOpen(false); },
+          }, o.label)
+        )
+      ),
+      React.createElement('input', { type: 'hidden', name, value })
+    )
+  );
+}
+
 function FormDemo({ onNavigate }) {
   const [fields, setFields] = useState({
-    name: '', company: '', role: '', email: '', docks: '', challenge: '',
+    name: '', company: '', email: '', phone: '', role: '', docks: '', challenge: '',
   });
   const [status, setStatus]   = useState('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -3025,6 +3287,10 @@ function FormDemo({ onNavigate }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!fields.role) {
+      setErrorMsg('Por favor, selecione seu cargo.');
+      return;
+    }
     setStatus('loading');
     setErrorMsg('');
     try {
@@ -3121,10 +3387,10 @@ function FormDemo({ onNavigate }) {
                 </div>
 
                 <div className="fd-field">
-                  <label className="fd-label" htmlFor="name">Nome</label>
+                  <label className="fd-label" htmlFor="name">Nome Completo</label>
                   <input
                     className="fd-input" id="name" name="name" type="text"
-                    required placeholder="Seu nome"
+                    required placeholder="João da Silva"
                     value={fields.name} onChange={handleChange} disabled={loading}
                   />
                 </div>
@@ -3133,53 +3399,65 @@ function FormDemo({ onNavigate }) {
                   <label className="fd-label" htmlFor="company">Empresa</label>
                   <input
                     className="fd-input" id="company" name="company" type="text"
-                    required placeholder="Nome da empresa"
+                    required placeholder="Nome da empresa ou grupo"
                     value={fields.company} onChange={handleChange} disabled={loading}
                   />
                 </div>
 
-                <div className="fd-field">
-                  <label className="fd-label" htmlFor="role">Cargo</label>
-                  <select
-                    className="fd-input fd-select" id="role" name="role"
-                    required value={fields.role} onChange={handleChange} disabled={loading}
-                  >
-                    <option value="">Selecione seu cargo</option>
-                    <option value="Gerente de CD">Gerente de CD</option>
-                    <option value="Supervisor de Expedição">Supervisor de Expedição</option>
-                    <option value="Gerente de Operações">Gerente de Operações</option>
-                    <option value="Melhoria Contínua">Melhoria Contínua</option>
-                    <option value="TI/WMS">TI/WMS</option>
-                    <option value="Outro">Outro</option>
-                  </select>
+                <div className="fd-field-row">
+                  <div className="fd-field">
+                    <label className="fd-label" htmlFor="email">E-mail</label>
+                    <input
+                      className="fd-input" id="email" name="email" type="email"
+                      required placeholder="joao@empresa.com.br"
+                      value={fields.email} onChange={handleChange} disabled={loading}
+                    />
+                  </div>
+                  <div className="fd-field">
+                    <label className="fd-label" htmlFor="phone">Telefone / WhatsApp</label>
+                    <input
+                      className="fd-input" id="phone" name="phone" type="tel"
+                      placeholder="+55 47 9 0000-0000"
+                      value={fields.phone} onChange={handleChange} disabled={loading}
+                    />
+                  </div>
                 </div>
 
-                <div className="fd-field">
-                  <label className="fd-label" htmlFor="email">E-mail</label>
-                  <input
-                    className="fd-input" id="email" name="email" type="email"
-                    required placeholder="seu@email.com"
-                    value={fields.email} onChange={handleChange} disabled={loading}
-                  />
-                </div>
-
-                <div className="fd-field">
-                  <label className="fd-label" htmlFor="docks">Número de Docas</label>
-                  <input
-                    className="fd-input" id="docks" name="docks" type="text"
-                    placeholder="ex.: 8, 12, 20+"
-                    value={fields.docks} onChange={handleChange} disabled={loading}
-                  />
+                <div className="fd-field-row">
+                  <div className="fd-field">
+                    <label className="fd-label" htmlFor="role">Cargo</label>
+                    <CustomSelect
+                      id="role" name="role"
+                      value={fields.role} onChange={handleChange} disabled={loading}
+                      placeholder="Selecione seu cargo"
+                      options={[
+                        { value: 'Gerente de CD',           label: 'Gerente de CD' },
+                        { value: 'Supervisor de Expedição', label: 'Supervisor de Expedição' },
+                        { value: 'Gerente de Operações',    label: 'Gerente de Operações' },
+                        { value: 'Melhoria Contínua',       label: 'Melhoria Contínua' },
+                        { value: 'TI/WMS',                  label: 'TI/WMS' },
+                        { value: 'Outro',                   label: 'Outro' },
+                      ]}
+                    />
+                  </div>
+                  <div className="fd-field">
+                    <label className="fd-label" htmlFor="docks">Número de Docas</label>
+                    <input
+                      className="fd-input" id="docks" name="docks" type="text"
+                      placeholder="ex.: 8, 12, 20+"
+                      value={fields.docks} onChange={handleChange} disabled={loading}
+                    />
+                  </div>
                 </div>
 
                 <div className="fd-field">
                   <label className="fd-label" htmlFor="challenge">
-                    Principal Desafio de Sequenciamento
+                    Principal Desafio
                   </label>
                   <textarea
                     className="fd-input fd-textarea" id="challenge" name="challenge"
                     rows={4}
-                    placeholder="Descreva seus principais desafios de sequenciamento de expedição (cutoffs de transportadoras, utilização de docas, frequência de replanejamento, etc.)"
+                    placeholder="Descreva seus principais desafios da sua expedição (prazos de transportadoras, atraso nas docas, frequência de replanejamento, etc.)"
                     value={fields.challenge} onChange={handleChange} disabled={loading}
                   />
                 </div>
