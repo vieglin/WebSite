@@ -381,7 +381,7 @@ button { cursor: pointer; }
 .results-panel-los { scroll-margin-top: 108px; margin-top: -20px; padding: 32px 30px 30px; border: 1px solid rgba(139,221,255,.22); border-radius: 20px; background: radial-gradient(circle at 88% 8%, rgba(72,211,255,.12), transparent 27%), linear-gradient(145deg, #102c43, #06111f 72%); box-shadow: 0 24px 65px rgba(20,56,72,.2); }
 .results-panel-los .results-panel-header { align-items: start; }
 
-.contact-section { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(54px, 8vw, 130px); align-items: start; }.contact-copy { padding-top: 13px; }.contact-copy h2 { max-width: 560px; }.contact-promise { display: flex; align-items: center; gap: 12px; margin-top: 48px; color: #56717c; font-size: 13px; }.promise-mark { color: #729e28; font-size: 22px; }.contact-card { padding: 28px; border: 1px solid rgba(10,23,36,.12); border-radius: 20px; background: rgba(255,255,255,.6); box-shadow: 0 15px 50px rgba(40,80,80,.1); }.contact-form { display: grid; gap: 18px; }.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }.contact-form label, .signin-panel label { display: grid; gap: 8px; color: #456072; font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }.contact-form input, .contact-form textarea, .signin-panel input { width: 100%; border: 1px solid rgba(10,23,36,.16); border-radius: 8px; padding: 13px 14px; color: var(--ink); background: rgba(255,255,255,.68); font: 500 13px var(--display); outline: none; resize: vertical; transition: border-color .2s ease, box-shadow .2s ease; }.contact-form input:focus, .contact-form textarea:focus, .signin-panel input:focus { border-color: #48a9bd; box-shadow: 0 0 0 3px rgba(72,169,189,.12); }.contact-form input::placeholder, .contact-form textarea::placeholder, .signin-panel input::placeholder { color: #8ba0aa; }.button-submit { border: 0; justify-self: start; margin-top: 2px; }.form-status { min-height: 18px; margin: -4px 0 0; color: #2e8334; font-size: 12px; }.privacy-note { margin: -2px 0 0; color: #708690; font: 500 9px var(--mono); letter-spacing: .02em; text-transform: none; }.schedule-card { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(10,23,36,.12); }.schedule-card > div { display: grid; gap: 5px; }.schedule-label { color: #729e28; }.schedule-card strong { font-size: 14px; }.schedule-link { display: inline-flex; align-items: center; gap: 10px; color: #0c7189; font-size: 12px; font-weight: 800; white-space: nowrap; }.schedule-link span:last-child { color: #729e28; font-size: 17px; }
+.contact-section { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(54px, 8vw, 130px); align-items: start; }.contact-copy { padding-top: 13px; }.contact-copy h2 { max-width: 560px; }.contact-promise { display: flex; align-items: center; gap: 12px; margin-top: 48px; color: #56717c; font-size: 13px; }.promise-mark { color: #729e28; font-size: 22px; }.contact-card { padding: 28px; border: 1px solid rgba(10,23,36,.12); border-radius: 20px; background: rgba(255,255,255,.6); box-shadow: 0 15px 50px rgba(40,80,80,.1); }.contact-form { display: grid; gap: 18px; }.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }.contact-form label, .signin-panel label { display: grid; gap: 8px; color: #456072; font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }.contact-form input, .contact-form textarea, .signin-panel input { width: 100%; border: 1px solid rgba(10,23,36,.16); border-radius: 8px; padding: 13px 14px; color: var(--ink); background: rgba(255,255,255,.68); font: 500 13px var(--display); outline: none; resize: vertical; transition: border-color .2s ease, box-shadow .2s ease; }.contact-form input:focus, .contact-form textarea:focus, .signin-panel input:focus { border-color: #48a9bd; box-shadow: 0 0 0 3px rgba(72,169,189,.12); }.contact-form input::placeholder, .contact-form textarea::placeholder, .signin-panel input::placeholder { color: #8ba0aa; }.form-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }.button-submit { border: 0; justify-self: start; margin-top: 2px; }.button-submit:disabled { opacity: .62; cursor: wait; }.form-status { min-height: 18px; margin: -4px 0 0; color: #2e8334; font-size: 12px; }.form-status.is-error { color: #a93d3d; }.privacy-note { margin: -2px 0 0; color: #708690; font: 500 9px var(--mono); letter-spacing: .02em; text-transform: none; }.schedule-card { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(10,23,36,.12); }.schedule-card > div { display: grid; gap: 5px; }.schedule-label { color: #729e28; }.schedule-card strong { font-size: 14px; }.schedule-link { display: inline-flex; align-items: center; gap: 10px; color: #0c7189; font-size: 12px; font-weight: 800; white-space: nowrap; }.schedule-link span:last-child { color: #729e28; font-size: 17px; }
 .select-control { position: relative; display: block; }
 .select-control::after { content: '⌄'; position: absolute; right: 14px; top: 50%; color: #4c7182; font-size: 18px; line-height: 1; pointer-events: none; transform: translateY(-58%); }
 .contact-form select { width: 100%; min-height: 45px; appearance: none; border: 1px solid rgba(10,23,36,.16); border-radius: 8px; padding: 12px 38px 12px 14px; color: var(--ink); background: rgba(255,255,255,.68); font: 500 13px var(--display); outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
@@ -936,20 +936,22 @@ button { cursor: pointer; }
             </div>
 
             <div class="contact-card" data-reveal data-delay="120">
-              <form class="contact-form" data-contact-form>
+              <form class="contact-form" action="https://formspree.io/f/mpqvqvky" method="POST" data-contact-form>
+                <input class="form-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <input type="hidden" name="origem" value="vieglin.com" />
                 <div class="form-row">
-                  <label><span data-i18n="form.name">Nome</span><input name="name" type="text" autocomplete="name" placeholder="Seu nome completo" data-i18n-placeholder="form.namePlaceholder" required /></label>
-                  <label><span data-i18n="form.company">Empresa</span><input name="company" type="text" autocomplete="organization" placeholder="Nome da empresa ou grupo" data-i18n-placeholder="form.companyPlaceholder" required /></label>
+                  <label><span data-i18n="form.name">Nome</span><input name="nome" type="text" autocomplete="name" placeholder="Seu nome completo" data-i18n-placeholder="form.namePlaceholder" required /></label>
+                  <label><span data-i18n="form.company">Empresa</span><input name="empresa" type="text" autocomplete="organization" placeholder="Nome da empresa ou grupo" data-i18n-placeholder="form.companyPlaceholder" required /></label>
                 </div>
                 <div class="form-row">
                   <label><span data-i18n="form.email">E-mail</span><input name="email" type="email" autocomplete="email" placeholder="joao@empresa.com.br" data-i18n-placeholder="form.emailPlaceholder" required /></label>
-                  <label><span data-i18n="form.phone">Telefone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" placeholder="+55 47 9 0000-0000" data-i18n-placeholder="form.phonePlaceholder" /></label>
+                  <label><span data-i18n="form.phone">Telefone / WhatsApp</span><input name="telefone" type="tel" autocomplete="tel" placeholder="+55 47 9 0000-0000" data-i18n-placeholder="form.phonePlaceholder" /></label>
                 </div>
                 <div class="form-row">
-                  <label><span data-i18n="form.role">Cargo</span><span class="select-control"><select name="role" data-role-select required><option value="" selected disabled data-i18n="form.rolePlaceholder">Selecione seu cargo</option><option value="diretoria" data-product-role="all" data-i18n="form.roleDirector">Diretoria / C-level</option><option value="operacoes" data-product-role="los" data-i18n="form.roleOperations">Gerente de Operações</option><option value="cd" data-product-role="los" data-i18n="form.roleDc">Coordenador de CD</option><option value="expedicao" data-product-role="los" data-i18n="form.roleShipping">Supervisor de Expedição</option><option value="recebimento" data-product-role="safra" data-i18n="form.roleReceiving">Gerente de Recebimento</option><option value="agronomo" data-product-role="safra" data-i18n="form.roleAgronomist">Engenheiro Agrônomo</option><option value="patio" data-product-role="safra" data-i18n="form.roleYard">Coordenador de Pátio</option><option value="ti" data-product-role="all" data-i18n="form.roleIt">TI / Sistemas</option><option value="outro" data-product-role="all" data-i18n="form.roleOther">Outro</option></select></span></label>
-                  <label><span data-i18n="form.maestroType">Tipo de Maestro</span><span class="select-control"><select name="maestro_type" data-maestro-type required><option value="los" selected>LOS</option><option value="safra">Safra</option></select></span></label>
+                  <label><span data-i18n="form.role">Cargo</span><span class="select-control"><select name="cargo" data-role-select required><option value="" selected disabled data-i18n="form.rolePlaceholder">Selecione seu cargo</option><option value="diretoria" data-product-role="all" data-i18n="form.roleDirector">Diretoria / C-level</option><option value="operacoes" data-product-role="los" data-i18n="form.roleOperations">Gerente de Operações</option><option value="cd" data-product-role="los" data-i18n="form.roleDc">Coordenador de CD</option><option value="expedicao" data-product-role="los" data-i18n="form.roleShipping">Supervisor de Expedição</option><option value="recebimento" data-product-role="safra" data-i18n="form.roleReceiving">Gerente de Recebimento</option><option value="agronomo" data-product-role="safra" data-i18n="form.roleAgronomist">Engenheiro Agrônomo</option><option value="patio" data-product-role="safra" data-i18n="form.roleYard">Coordenador de Pátio</option><option value="ti" data-product-role="all" data-i18n="form.roleIt">TI / Sistemas</option><option value="outro" data-product-role="all" data-i18n="form.roleOther">Outro</option></select></span></label>
+                  <label><span data-i18n="form.maestroType">Tipo de Maestro</span><span class="select-control"><select name="tipo_maestro" data-maestro-type required><option value="los" selected>LOS</option><option value="safra">Safra</option></select></span></label>
                 </div>
-                <label><span data-i18n="form.challenge">Principal desafio</span><textarea name="challenge" rows="3" placeholder="Descreva seus principais desafios operacionais (gargalos, atrasos, frequência de replanejamento, etc.)" data-i18n-placeholder="form.challengePlaceholder"></textarea></label>
+                <label><span data-i18n="form.challenge">Principal desafio</span><textarea name="desafio" rows="3" placeholder="Descreva seus principais desafios operacionais (gargalos, atrasos, frequência de replanejamento, etc.)" data-i18n-placeholder="form.challengePlaceholder"></textarea></label>
                 <button class="button button-primary button-submit" type="submit"><span data-i18n="form.submit">Entrar em contato</span><span class="button-icon" aria-hidden="true">↗</span></button>
                 <p class="form-status" data-form-status role="status" aria-live="polite"></p>
               </form>
@@ -1020,7 +1022,7 @@ const copy = {
     footer: { statement: 'The operational intelligence layer for your logistics.', contactLabel: 'Contact', companyLabel: 'Company', location: 'Blumenau · SC · Brazil', note: 'Artificial intelligence applied to logistics orchestration.' },
     cookie: { link: 'Cookie Policy', kicker: 'Privacy', title: 'Cookie Policy', intro: 'Transparency first: the current version of this website does not use cookies for analytics, advertising, profiling, or preference storage.', currentTitle: 'Current use', currentBody: 'This page does not create cookies or store browser identifiers. Navigation, languages, animations, and video work without tracking.', futureTitle: 'Future services', futureBody: 'If Vieglin adds analytics or marketing services, they will remain disabled until you choose, with equivalent options to accept, reject, or manage preferences.', contactTitle: 'Questions', contactBody: 'Contact us at', updated: 'Updated on August 27, 2026.', close: 'Understood' },
     signin: { kicker: 'Maestro workspace', title: 'Sign in to the operation.', body: 'The application will connect here when your Maestro workspace is ready.', email: 'Work email', password: 'Password', passwordPlaceholder: '••••••••', cta: 'Continue', footnote: 'Prototype only — no credentials are sent.' },
-    messages: { formSuccess: 'Thanks — your note is ready for the Vieglin team.', signInSuccess: 'Prototype ready. Application wiring comes next.' }
+    messages: { formSubmitting: 'Sending…', formSuccess: 'Thank you — your message was sent to the Vieglin team.', formError: 'We could not send your message. Please try again or email admin@vieglin.com.', formRateLimited: 'Too many attempts. Please wait a moment and try again.', signInSuccess: 'Prototype ready. Application wiring comes next.' }
   },
   pt: {
     nav: { why: 'Por que a Vieglin', what: 'O que fazemos', maestro: 'Tecnologia', los: 'Maestro LOS', results: 'Resultados', contact: 'Fale conosco', signIn: 'Entrar' },
@@ -1036,7 +1038,7 @@ const copy = {
     footer: { statement: 'A camada de inteligência operacional da sua logística.', contactLabel: 'Contato', companyLabel: 'Empresa', location: 'Blumenau · SC · Brasil', note: 'Inteligência artificial aplicada à orquestração logística.' },
     cookie: { link: 'Política de Cookies', kicker: 'Privacidade', title: 'Política de Cookies', intro: 'Transparência em primeiro lugar: a versão atual deste site não utiliza cookies de análise, publicidade, perfilamento ou armazenamento de preferências.', currentTitle: 'Uso atual', currentBody: 'O código desta página não cria cookies nem grava identificadores no navegador. Navegação, idiomas, animações e vídeo funcionam sem rastreamento.', futureTitle: 'Serviços futuros', futureBody: 'Se a Vieglin adicionar serviços de análise ou marketing, eles permanecerão desativados até sua escolha, com opções equivalentes para aceitar, rejeitar ou gerenciar preferências.', contactTitle: 'Dúvidas', contactBody: 'Entre em contato pelo e-mail', updated: 'Atualizada em 27 de agosto de 2026.', close: 'Entendi' },
     signin: { kicker: 'Espaço de trabalho Maestro', title: 'Entre na operação.', body: 'A aplicação será conectada aqui quando seu espaço Maestro estiver pronto.', email: 'E-mail profissional', password: 'Senha', passwordPlaceholder: '••••••••', cta: 'Continuar', footnote: 'Protótipo — nenhuma credencial é enviada.' },
-    messages: { formSuccess: 'Obrigado — sua mensagem está pronta para a equipe Vieglin.', signInSuccess: 'Protótipo pronto. A conexão com a aplicação vem depois.' }
+    messages: { formSubmitting: 'Enviando…', formSuccess: 'Obrigado — sua mensagem foi enviada para a equipe Vieglin.', formError: 'Não foi possível enviar sua mensagem. Tente novamente ou escreva para admin@vieglin.com.', formRateLimited: 'Muitas tentativas. Aguarde um momento e tente novamente.', signInSuccess: 'Protótipo pronto. A conexão com a aplicação vem depois.' }
   },
   de: {
     nav: { why: 'Warum Vieglin', what: 'Was wir tun', maestro: 'Technologie', los: 'Maestro LOS', results: 'Ergebnisse', contact: 'Gespräch starten', signIn: 'Anmelden' },
@@ -1052,7 +1054,7 @@ const copy = {
     footer: { statement: 'Die operative Intelligenzschicht für Ihre Logistik.', contactLabel: 'Kontakt', companyLabel: 'Unternehmen', location: 'Blumenau · SC · Brasilien', note: 'Künstliche Intelligenz für die Logistik-Orchestrierung.' },
     cookie: { link: 'Cookie-Richtlinie', kicker: 'Datenschutz', title: 'Cookie-Richtlinie', intro: 'Transparenz zuerst: Die aktuelle Version dieser Website verwendet keine Cookies für Analyse, Werbung, Profilbildung oder die Speicherung von Einstellungen.', currentTitle: 'Aktuelle Nutzung', currentBody: 'Diese Seite erstellt keine Cookies und speichert keine Browser-Kennungen. Navigation, Sprachen, Animationen und Video funktionieren ohne Tracking.', futureTitle: 'Künftige Dienste', futureBody: 'Wenn Vieglin Analyse- oder Marketingdienste hinzufügt, bleiben sie bis zu Ihrer Auswahl deaktiviert. Akzeptieren, Ablehnen und Einstellungen verwalten werden gleichwertig angeboten.', contactTitle: 'Fragen', contactBody: 'Kontaktieren Sie uns unter', updated: 'Aktualisiert am 27. August 2026.', close: 'Verstanden' },
     signin: { kicker: 'Maestro-Arbeitsbereich', title: 'In den Betrieb einloggen.', body: 'Die Anwendung wird hier verbunden, sobald Ihr Maestro-Arbeitsbereich bereit ist.', email: 'Geschäftliche E-Mail', password: 'Passwort', passwordPlaceholder: '••••••••', cta: 'Weiter', footnote: 'Prototyp — es werden keine Zugangsdaten gesendet.' },
-    messages: { formSuccess: 'Danke — Ihre Nachricht ist für das Vieglin-Team vorbereitet.', signInSuccess: 'Prototyp bereit. Die Anbindung an die Anwendung folgt.' }
+    messages: { formSubmitting: 'Wird gesendet…', formSuccess: 'Vielen Dank — Ihre Nachricht wurde an das Vieglin-Team gesendet.', formError: 'Ihre Nachricht konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie an admin@vieglin.com.', formRateLimited: 'Zu viele Versuche. Bitte warten Sie einen Moment und versuchen Sie es erneut.', signInSuccess: 'Prototyp bereit. Die Anbindung an die Anwendung folgt.' }
   }
 };
 
@@ -1376,12 +1378,54 @@ document.querySelector('[data-menu-toggle]')?.addEventListener('click', (event) 
 });
 document.querySelectorAll('.main-nav a').forEach((link) => link.addEventListener('click', () => { document.querySelector('.main-nav')?.classList.remove('is-open'); document.querySelector('[data-menu-toggle]')?.setAttribute('aria-expanded', 'false'); }));
 
-document.querySelector('[data-contact-form]')?.addEventListener('submit', (event) => {
+const contactForm = document.querySelector('[data-contact-form]');
+const formspreeEndpoint = 'https://formspree.io/f/mpqvqvky';
+
+contactForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const status = event.currentTarget.querySelector('[data-form-status]');
-  status.textContent = copy[currentLanguage].messages.formSuccess;
-  event.currentTarget.reset();
-  syncRoleOptions();
+  if (contactForm.dataset.submitting === 'true') return;
+
+  const status = contactForm.querySelector('[data-form-status]');
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const submitLabel = submitButton?.querySelector('[data-i18n="form.submit"]');
+  contactForm.dataset.submitting = 'true';
+  contactForm.setAttribute('aria-busy', 'true');
+  if (submitButton) submitButton.disabled = true;
+  status.classList.remove('is-error', 'is-success');
+  status.textContent = copy[currentLanguage].messages.formSubmitting;
+  if (submitLabel) submitLabel.textContent = copy[currentLanguage].messages.formSubmitting;
+
+  try {
+    const formData = new FormData(contactForm);
+    formData.set('idioma', currentLanguage);
+    const response = await fetch(formspreeEndpoint, {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' },
+      credentials: 'omit'
+    });
+
+    if (!response.ok) {
+      const submissionError = new Error(`Formspree returned ${response.status}`);
+      submissionError.status = response.status;
+      throw submissionError;
+    }
+
+    status.classList.add('is-success');
+    status.textContent = copy[currentLanguage].messages.formSuccess;
+    contactForm.reset();
+    syncRoleOptions();
+  } catch (error) {
+    status.classList.add('is-error');
+    status.textContent = error.status === 429
+      ? copy[currentLanguage].messages.formRateLimited
+      : copy[currentLanguage].messages.formError;
+  } finally {
+    contactForm.dataset.submitting = 'false';
+    contactForm.removeAttribute('aria-busy');
+    if (submitButton) submitButton.disabled = false;
+    if (submitLabel) submitLabel.textContent = copy[currentLanguage].form.submit;
+  }
 });
 document.querySelector('[data-signin-form]')?.addEventListener('submit', (event) => {
   event.preventDefault();
